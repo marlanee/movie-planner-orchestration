@@ -87,3 +87,7 @@ python scripts/run_scenarios.py --mode fixture   # 합성 데이터로 대표 �
 - 영화진흥위원회 영화관입장권통합전산망 · 통합전산망 오픈 API
 - 카카오 로컬 API
 - This product uses the TMDB API but is not endorsed or certified by TMDB.
+
+## 라이선스
+
+코드와 문서는 [MIT License](LICENSE)를 따릅니다. TMDB 로고(`app/frontend/img/tmdb_logo_long.svg`)는 TMDB 소유이며 출처 표기 목적으로만 사용하므로 이 라이선스에 포함되지 않습니다. 외부 API 데이터의 이용 조건은 각 제공자의 약관을 따릅니다.
