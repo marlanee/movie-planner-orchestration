@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>실행 로그 | 영화 플래너</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/api.js"></script>
+  <script defer src="js/logs.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-bar">
+      <span class="brand">영화 플래너</span>
+      <nav aria-label="주 메뉴">
+        <a href="index.html">대화</a>
+        <a href="plans.html">계획 관리</a>
+        <a href="logs.html" aria-current="page">실행 로그</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page">
+    <div class="page-heading"><h1>실행 로그</h1></div>
+    <p id="log-status" class="notice" role="status" hidden></p>
+    <div class="management-layout log-layout">
+      <section class="panel" aria-labelledby="sessions-heading">
+        <h2 id="sessions-heading">대화 세션</h2>
+        <ul id="log-list" class="record-list" aria-label="실행 로그 세션 목록"></ul>
+      </section>
+      <section class="panel" aria-labelledby="events-heading">
+        <h2 id="events-heading">실행 과정</h2>
+        <p id="log-session" class="muted"></p>
+        <div id="log-detail" aria-live="polite">
+          <p class="muted">대화 세션을 선택하면 실행 과정이 표시됩니다.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="attribution" aria-labelledby="attribution-heading">
+    <h2 id="attribution-heading">출처·크레딧</h2>
+    <p><a href="https://www.kobis.or.kr/kobisopenapi/homepg/board/findServiceGuideList.do" target="_blank" rel="noopener noreferrer">영화진흥위원회 영화관입장권통합전산망 · 통합전산망 오픈 API 이용</a></p>
+    <p><a href="https://developer.themoviedb.org/docs/faq" target="_blank" rel="noopener noreferrer"><img class="tmdb-logo" src="img/tmdb_logo_long.svg" alt="TMDB"></a></p>
+    <p lang="en">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+    <p><a href="https://developers.kakao.com/docs/ko/local/dev-guide" target="_blank" rel="noopener noreferrer">카카오 로컬 API 이용</a></p>
+  </footer>
+</body>
+</html>

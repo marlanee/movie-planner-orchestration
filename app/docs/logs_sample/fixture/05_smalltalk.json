@@ -1,0 +1,119 @@
+{
+  "synthetic": true,
+  "events": [
+    {
+      "session_id": "a7d37485300343bda8b00e968316d744",
+      "seq": 1,
+      "ts": "2026-11-18T14:03:39.156196+09:00",
+      "type": "stage_start",
+      "stage": "analyze",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "a7d37485300343bda8b00e968316d744",
+      "seq": 2,
+      "ts": "2026-11-18T14:03:39.156196+09:00",
+      "type": "llm_decision",
+      "stage": "analyze",
+      "payload": {
+        "intent": "smalltalk",
+        "reason": "인사하며 플래너의 사용법을 묻는다.",
+        "extracted": {
+          "date": null,
+          "start_after": null,
+          "end_by": null,
+          "region": null,
+          "genre": null,
+          "movie_title": null
+        },
+        "merged": {
+          "date": "2026-11-18",
+          "start_after": null,
+          "end_by": null,
+          "region": null,
+          "genre": null,
+          "movie_title": null
+        },
+        "date_defaulted": true
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "a7d37485300343bda8b00e968316d744",
+      "seq": 3,
+      "ts": "2026-11-18T14:03:39.156196+09:00",
+      "type": "stage_end",
+      "stage": "analyze",
+      "payload": {
+        "intent": "smalltalk",
+        "date_defaulted": true
+      },
+      "duration_ms": 3
+    },
+    {
+      "session_id": "a7d37485300343bda8b00e968316d744",
+      "seq": 4,
+      "ts": "2026-11-18T14:03:39.164809+09:00",
+      "type": "stage_start",
+      "stage": "plan",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "a7d37485300343bda8b00e968316d744",
+      "seq": 5,
+      "ts": "2026-11-18T14:03:39.168785+09:00",
+      "type": "stage_end",
+      "stage": "plan",
+      "payload": {
+        "plan": [],
+        "skipped": true
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "a7d37485300343bda8b00e968316d744",
+      "seq": 6,
+      "ts": "2026-11-18T14:03:39.173076+09:00",
+      "type": "stage_start",
+      "stage": "respond",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "a7d37485300343bda8b00e968316d744",
+      "seq": 7,
+      "ts": "2026-11-18T14:03:39.174087+09:00",
+      "type": "stage_end",
+      "stage": "respond",
+      "payload": {
+        "status": "smalltalk",
+        "recommendation_count": 0
+      },
+      "duration_ms": 0
+    }
+  ],
+  "scenario": "S5 Tool 불필요",
+  "message": "안녕, 이거 어떻게 써?",
+  "answer": "관람 날짜, 지역, 가능한 시간대를 알려 주세요. 예를 들어 ‘토요일 3시 이후 강남에서 영화 보고 저녁 7시까지 끝내고 싶어요’라고 물어보세요.",
+  "expected": {
+    "status": "smalltalk",
+    "replan_count": 0,
+    "tool_call_count": 0,
+    "answer_present": true,
+    "events_match_sqlite": true,
+    "final_event_status": "smalltalk",
+    "replan_event_count": 0
+  },
+  "actual": {
+    "status": "smalltalk",
+    "replan_count": 0,
+    "tool_call_count": 0,
+    "answer_present": true,
+    "events_match_sqlite": true,
+    "final_event_status": "smalltalk",
+    "replan_event_count": 0
+  },
+  "differences": {}
+}

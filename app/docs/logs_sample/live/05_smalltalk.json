@@ -1,0 +1,97 @@
+{
+  "synthetic": false,
+  "events": [
+    {
+      "session_id": "96d73a0064b44680aede068a9ed672ac",
+      "seq": 1,
+      "ts": "2026-11-18T14:04:24.164553+09:00",
+      "type": "stage_start",
+      "stage": "analyze",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "96d73a0064b44680aede068a9ed672ac",
+      "seq": 2,
+      "ts": "2026-11-18T14:04:25.764830+09:00",
+      "type": "llm_decision",
+      "stage": "analyze",
+      "payload": {
+        "intent": "smalltalk",
+        "reason": "사용법(어떻게 쓰는지) 문의로, 영화 관람 계획/사실 조회보다는 안내가 필요한 요청입니다.",
+        "extracted": {
+          "date": null,
+          "start_after": null,
+          "end_by": null,
+          "region": null,
+          "genre": null,
+          "movie_title": null
+        },
+        "merged": {
+          "date": "2026-11-18",
+          "start_after": null,
+          "end_by": null,
+          "region": null,
+          "genre": null,
+          "movie_title": null
+        },
+        "date_defaulted": true
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "96d73a0064b44680aede068a9ed672ac",
+      "seq": 3,
+      "ts": "2026-11-18T14:04:25.764830+09:00",
+      "type": "stage_end",
+      "stage": "analyze",
+      "payload": {
+        "intent": "smalltalk",
+        "date_defaulted": true
+      },
+      "duration_ms": 1596
+    },
+    {
+      "session_id": "96d73a0064b44680aede068a9ed672ac",
+      "seq": 4,
+      "ts": "2026-11-18T14:04:25.764830+09:00",
+      "type": "stage_start",
+      "stage": "plan",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "96d73a0064b44680aede068a9ed672ac",
+      "seq": 5,
+      "ts": "2026-11-18T14:04:25.764830+09:00",
+      "type": "stage_end",
+      "stage": "plan",
+      "payload": {
+        "plan": [],
+        "skipped": true
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "96d73a0064b44680aede068a9ed672ac",
+      "seq": 6,
+      "ts": "2026-11-18T14:04:25.764830+09:00",
+      "type": "stage_start",
+      "stage": "respond",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "96d73a0064b44680aede068a9ed672ac",
+      "seq": 7,
+      "ts": "2026-11-18T14:04:25.764830+09:00",
+      "type": "stage_end",
+      "stage": "respond",
+      "payload": {
+        "status": "smalltalk",
+        "recommendation_count": 0
+      },
+      "duration_ms": 0
+    }
+  ]
+}

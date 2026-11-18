@@ -1,0 +1,129 @@
+{
+  "synthetic": true,
+  "events": [
+    {
+      "session_id": "539a306d05cc4c6981e8677549ed0dce",
+      "seq": 1,
+      "ts": "2026-11-18T14:03:39.184275+09:00",
+      "type": "stage_start",
+      "stage": "analyze",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "539a306d05cc4c6981e8677549ed0dce",
+      "seq": 2,
+      "ts": "2026-11-18T14:03:39.185348+09:00",
+      "type": "llm_decision",
+      "stage": "analyze",
+      "payload": {
+        "intent": "plan_movie",
+        "reason": "종료 시각을 기준으로 영화를 추천받으려고 한다.",
+        "extracted": {
+          "date": null,
+          "start_after": null,
+          "end_by": "19:00",
+          "region": null,
+          "genre": null,
+          "movie_title": null
+        },
+        "merged": {
+          "date": "2026-11-18",
+          "start_after": null,
+          "end_by": "19:00",
+          "region": null,
+          "genre": null,
+          "movie_title": null
+        },
+        "date_defaulted": true,
+        "rule_overrides": {
+          "end_by": {
+            "llm": null,
+            "rule": "19:00"
+          }
+        }
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "539a306d05cc4c6981e8677549ed0dce",
+      "seq": 3,
+      "ts": "2026-11-18T14:03:39.190351+09:00",
+      "type": "stage_end",
+      "stage": "analyze",
+      "payload": {
+        "intent": "plan_movie",
+        "date_defaulted": true
+      },
+      "duration_ms": 3
+    },
+    {
+      "session_id": "539a306d05cc4c6981e8677549ed0dce",
+      "seq": 4,
+      "ts": "2026-11-18T14:03:39.193945+09:00",
+      "type": "stage_start",
+      "stage": "plan",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "539a306d05cc4c6981e8677549ed0dce",
+      "seq": 5,
+      "ts": "2026-11-18T14:03:39.193945+09:00",
+      "type": "stage_end",
+      "stage": "plan",
+      "payload": {
+        "plan": [],
+        "status": "clarify"
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "539a306d05cc4c6981e8677549ed0dce",
+      "seq": 6,
+      "ts": "2026-11-18T14:03:39.199920+09:00",
+      "type": "stage_start",
+      "stage": "respond",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "539a306d05cc4c6981e8677549ed0dce",
+      "seq": 7,
+      "ts": "2026-11-18T14:03:39.204034+09:00",
+      "type": "stage_end",
+      "stage": "respond",
+      "payload": {
+        "status": "clarify",
+        "recommendation_count": 0
+      },
+      "duration_ms": 0
+    }
+  ],
+  "scenario": "S6 되묻기",
+  "message": "7시 전에 끝나는 영화 추천해 줘",
+  "answer": "몇 시 이후에 보실 수 있는지 알려 주세요. 시작 시각을 알아야 끝나는 시각을 계산할 수 있습니다.",
+  "expected": {
+    "status": "clarify",
+    "replan_count": 0,
+    "tool_call_count": 0,
+    "end_by": "19:00",
+    "asks_for_start": true,
+    "answer_present": true,
+    "events_match_sqlite": true,
+    "final_event_status": "clarify",
+    "replan_event_count": 0
+  },
+  "actual": {
+    "status": "clarify",
+    "replan_count": 0,
+    "tool_call_count": 0,
+    "end_by": "19:00",
+    "asks_for_start": true,
+    "answer_present": true,
+    "events_match_sqlite": true,
+    "final_event_status": "clarify",
+    "replan_event_count": 0
+  },
+  "differences": {}
+}

@@ -1,0 +1,97 @@
+{
+  "synthetic": false,
+  "events": [
+    {
+      "session_id": "e98bae3fa5fe470183ebb14d7d3aa614",
+      "seq": 1,
+      "ts": "2026-11-18T14:04:25.774947+09:00",
+      "type": "stage_start",
+      "stage": "analyze",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "e98bae3fa5fe470183ebb14d7d3aa614",
+      "seq": 2,
+      "ts": "2026-11-18T14:04:27.124731+09:00",
+      "type": "llm_decision",
+      "stage": "analyze",
+      "payload": {
+        "intent": "plan_movie",
+        "reason": "사용자가 관람을 계획하기 위해 7시 전에(종료 기준) 끝나는 영화 추천을 요청했기 때문입니다.",
+        "extracted": {
+          "date": "2026-11-18",
+          "start_after": null,
+          "end_by": "19:00",
+          "region": null,
+          "genre": null,
+          "movie_title": null
+        },
+        "merged": {
+          "date": "2026-11-18",
+          "start_after": null,
+          "end_by": "19:00",
+          "region": null,
+          "genre": null,
+          "movie_title": null
+        },
+        "date_defaulted": false
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "e98bae3fa5fe470183ebb14d7d3aa614",
+      "seq": 3,
+      "ts": "2026-11-18T14:04:27.124731+09:00",
+      "type": "stage_end",
+      "stage": "analyze",
+      "payload": {
+        "intent": "plan_movie",
+        "date_defaulted": false
+      },
+      "duration_ms": 1354
+    },
+    {
+      "session_id": "e98bae3fa5fe470183ebb14d7d3aa614",
+      "seq": 4,
+      "ts": "2026-11-18T14:04:27.124731+09:00",
+      "type": "stage_start",
+      "stage": "plan",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "e98bae3fa5fe470183ebb14d7d3aa614",
+      "seq": 5,
+      "ts": "2026-11-18T14:04:27.124731+09:00",
+      "type": "stage_end",
+      "stage": "plan",
+      "payload": {
+        "plan": [],
+        "status": "clarify"
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "e98bae3fa5fe470183ebb14d7d3aa614",
+      "seq": 6,
+      "ts": "2026-11-18T14:04:27.124731+09:00",
+      "type": "stage_start",
+      "stage": "respond",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "e98bae3fa5fe470183ebb14d7d3aa614",
+      "seq": 7,
+      "ts": "2026-11-18T14:04:27.124731+09:00",
+      "type": "stage_end",
+      "stage": "respond",
+      "payload": {
+        "status": "clarify",
+        "recommendation_count": 0
+      },
+      "duration_ms": 0
+    }
+  ]
+}

@@ -1,0 +1,559 @@
+{
+  "synthetic": false,
+  "events": [
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 1,
+      "ts": "2026-11-18T14:04:17.599645+09:00",
+      "type": "stage_start",
+      "stage": "analyze",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 2,
+      "ts": "2026-11-18T14:04:19.063908+09:00",
+      "type": "llm_decision",
+      "stage": "analyze",
+      "payload": {
+        "intent": "plan_movie",
+        "reason": "사용자가 날짜/시간 제약과 지역(마라도)을 포함해 영화 관람 일정을 요청했기 때문입니다.",
+        "extracted": {
+          "date": "2026-11-21",
+          "start_after": "15:00",
+          "end_by": "19:00",
+          "region": "마라도",
+          "genre": null,
+          "movie_title": null
+        },
+        "merged": {
+          "date": "2026-11-21",
+          "start_after": "15:00",
+          "end_by": "19:00",
+          "region": "마라도",
+          "genre": null,
+          "movie_title": null
+        },
+        "date_defaulted": false,
+        "rule_overrides": {
+          "end_by": {
+            "llm": "18:00",
+            "rule": "19:00"
+          }
+        }
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 3,
+      "ts": "2026-11-18T14:04:19.063908+09:00",
+      "type": "stage_end",
+      "stage": "analyze",
+      "payload": {
+        "intent": "plan_movie",
+        "date_defaulted": false
+      },
+      "duration_ms": 1469
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 4,
+      "ts": "2026-11-18T14:04:19.063908+09:00",
+      "type": "stage_start",
+      "stage": "plan",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 5,
+      "ts": "2026-11-18T14:04:19.063908+09:00",
+      "type": "stage_end",
+      "stage": "plan",
+      "payload": {
+        "plan": [
+          {
+            "step": 1,
+            "tool": "get_boxoffice",
+            "args": {
+              "period": "daily",
+              "target_date": "2026-11-21"
+            },
+            "purpose": "일별 박스오피스"
+          },
+          {
+            "step": 2,
+            "tool": "get_movie_detail",
+            "args": {
+              "from": "candidates"
+            },
+            "purpose": "후보 영화 러닝타임·장르 확인"
+          },
+          {
+            "step": 3,
+            "tool": "search_theaters",
+            "args": {
+              "region": "마라도"
+            },
+            "purpose": "지역 영화관 위치 검색"
+          }
+        ]
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 6,
+      "ts": "2026-11-18T14:04:19.063908+09:00",
+      "type": "stage_start",
+      "stage": "execute",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 7,
+      "ts": "2026-11-18T14:04:19.063908+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "212c12748e8e4cefb8a3ea2ae07223af",
+        "tool": "get_boxoffice",
+        "provider": "KOBIS",
+        "args": {
+          "target_date": "2026-11-21",
+          "period": "daily"
+        }
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 8,
+      "ts": "2026-11-18T14:04:21.357891+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "212c12748e8e4cefb8a3ea2ae07223af",
+        "tool": "get_boxoffice",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 2288,
+        "code": null
+      },
+      "duration_ms": 2288
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 9,
+      "ts": "2026-11-18T14:04:21.357891+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "c3e77d3f07d24ecd90ffbe3ae6310c8e",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 10,
+      "ts": "2026-11-18T14:04:21.357891+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "f83fdcf81d4a4120b90ad20077d2c131",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 11,
+      "ts": "2026-11-18T14:04:21.357891+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "f183fe5cbb6b404bb25235682242fab2",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 12,
+      "ts": "2026-11-18T14:04:21.364548+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "c3f5061f048848178f3e4f2c30104cc6",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 13,
+      "ts": "2026-11-18T14:04:21.366608+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "49bf993fc4ed40b795234b6f96b21bc3",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 14,
+      "ts": "2026-11-18T14:04:21.366608+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "ec3ede5d150241c0b7cad91d103c620f",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 15,
+      "ts": "2026-11-18T14:04:21.366608+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "1c3c80d3f64b4b98a4bd41f5c3db40c5",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 16,
+      "ts": "2026-11-18T14:04:21.366608+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "e039945d8fd044f98ec592913fe1460a",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 17,
+      "ts": "2026-11-18T14:04:21.366608+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "b4002a59b02e42419deb2f44df79b738",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 18,
+      "ts": "2026-11-18T14:04:21.366608+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "37472ff76a5a47169c2a6ed241f1d3dd",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 19,
+      "ts": "2026-11-18T14:04:22.058322+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "c3e77d3f07d24ecd90ffbe3ae6310c8e",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 695,
+        "code": null
+      },
+      "duration_ms": 695
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 20,
+      "ts": "2026-11-18T14:04:22.058322+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "f83fdcf81d4a4120b90ad20077d2c131",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 677,
+        "code": null
+      },
+      "duration_ms": 677
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 21,
+      "ts": "2026-11-18T14:04:22.058322+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "f183fe5cbb6b404bb25235682242fab2",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 689,
+        "code": null
+      },
+      "duration_ms": 689
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 22,
+      "ts": "2026-11-18T14:04:22.058322+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "c3f5061f048848178f3e4f2c30104cc6",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 692,
+        "code": null
+      },
+      "duration_ms": 692
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 23,
+      "ts": "2026-11-18T14:04:22.779147+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "49bf993fc4ed40b795234b6f96b21bc3",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 739,
+        "code": null
+      },
+      "duration_ms": 739
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 24,
+      "ts": "2026-11-18T14:04:23.425225+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "ec3ede5d150241c0b7cad91d103c620f",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 1375,
+        "code": null
+      },
+      "duration_ms": 1375
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 25,
+      "ts": "2026-11-18T14:04:23.754961+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "1c3c80d3f64b4b98a4bd41f5c3db40c5",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 1703,
+        "code": null
+      },
+      "duration_ms": 1703
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 26,
+      "ts": "2026-11-18T14:04:23.754961+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "e039945d8fd044f98ec592913fe1460a",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 668,
+        "code": null
+      },
+      "duration_ms": 668
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 27,
+      "ts": "2026-11-18T14:04:23.754961+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "b4002a59b02e42419deb2f44df79b738",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 630,
+        "code": null
+      },
+      "duration_ms": 630
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 28,
+      "ts": "2026-11-18T14:04:23.754961+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "37472ff76a5a47169c2a6ed241f1d3dd",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 544,
+        "code": null
+      },
+      "duration_ms": 544
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 29,
+      "ts": "2026-11-18T14:04:23.754961+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "7a706aee854d4cc48ec89c630574fe66",
+        "tool": "search_theaters",
+        "provider": "KAKAO",
+        "args": {
+          "region": "마라도"
+        }
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 30,
+      "ts": "2026-11-18T14:04:24.154899+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "7a706aee854d4cc48ec89c630574fe66",
+        "tool": "search_theaters",
+        "provider": "KAKAO",
+        "ok": false,
+        "duration_ms": 393,
+        "code": "NO_RESULT"
+      },
+      "duration_ms": 393
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 31,
+      "ts": "2026-11-18T14:04:24.154899+09:00",
+      "type": "stage_end",
+      "stage": "execute",
+      "payload": {
+        "candidate_count": 10,
+        "cache_hits": 0,
+        "service_cache_hits": 0,
+        "failure_count": 1
+      },
+      "duration_ms": 5083
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 32,
+      "ts": "2026-11-18T14:04:24.154899+09:00",
+      "type": "stage_start",
+      "stage": "judge",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 33,
+      "ts": "2026-11-18T14:04:24.154899+09:00",
+      "type": "stage_end",
+      "stage": "judge",
+      "payload": {
+        "feasible_count": 10,
+        "excluded_count": 0,
+        "title_matches": 0,
+        "next": "respond"
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 34,
+      "ts": "2026-11-18T14:04:24.154899+09:00",
+      "type": "stage_start",
+      "stage": "respond",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "6d1e459fbbc64b849586e1d44f1748a4",
+      "seq": 35,
+      "ts": "2026-11-18T14:04:24.154899+09:00",
+      "type": "stage_end",
+      "stage": "respond",
+      "payload": {
+        "status": "ok",
+        "recommendation_count": 3
+      },
+      "duration_ms": 0
+    }
+  ]
+}

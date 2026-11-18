@@ -1,0 +1,361 @@
+{
+  "synthetic": true,
+  "events": [
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 1,
+      "ts": "2026-11-18T14:03:39.077916+09:00",
+      "type": "stage_start",
+      "stage": "analyze",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 2,
+      "ts": "2026-11-18T14:03:39.079922+09:00",
+      "type": "llm_decision",
+      "stage": "analyze",
+      "payload": {
+        "intent": "plan_movie",
+        "reason": "마라도에서 영화 볼 일정을 정하려고 한다.",
+        "extracted": {
+          "date": "2026-11-21",
+          "start_after": "15:00",
+          "end_by": "19:00",
+          "region": "마라도",
+          "genre": null,
+          "movie_title": null
+        },
+        "merged": {
+          "date": "2026-11-21",
+          "start_after": "15:00",
+          "end_by": "19:00",
+          "region": "마라도",
+          "genre": null,
+          "movie_title": null
+        },
+        "date_defaulted": false,
+        "rule_overrides": {
+          "start_after": {
+            "llm": null,
+            "rule": "15:00"
+          },
+          "end_by": {
+            "llm": null,
+            "rule": "19:00"
+          },
+          "date": {
+            "llm": null,
+            "rule": "2026-11-21"
+          }
+        }
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 3,
+      "ts": "2026-11-18T14:03:39.084181+09:00",
+      "type": "stage_end",
+      "stage": "analyze",
+      "payload": {
+        "intent": "plan_movie",
+        "date_defaulted": false
+      },
+      "duration_ms": 4
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 4,
+      "ts": "2026-11-18T14:03:39.090107+09:00",
+      "type": "stage_start",
+      "stage": "plan",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 5,
+      "ts": "2026-11-18T14:03:39.094271+09:00",
+      "type": "stage_end",
+      "stage": "plan",
+      "payload": {
+        "plan": [
+          {
+            "step": 1,
+            "tool": "get_boxoffice",
+            "args": {
+              "period": "daily",
+              "target_date": "2026-11-21"
+            },
+            "purpose": "일별 박스오피스"
+          },
+          {
+            "step": 2,
+            "tool": "get_movie_detail",
+            "args": {
+              "from": "candidates"
+            },
+            "purpose": "후보 영화 러닝타임·장르 확인"
+          },
+          {
+            "step": 3,
+            "tool": "search_theaters",
+            "args": {
+              "region": "마라도"
+            },
+            "purpose": "지역 영화관 위치 검색"
+          }
+        ]
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 6,
+      "ts": "2026-11-18T14:03:39.095057+09:00",
+      "type": "stage_start",
+      "stage": "execute",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 7,
+      "ts": "2026-11-18T14:03:39.103060+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "6c0c01d2e0904b54bf1db3a8a24513d6",
+        "tool": "get_boxoffice",
+        "provider": "KOBIS",
+        "args": {
+          "target_date": "2026-11-21",
+          "period": "daily"
+        }
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 8,
+      "ts": "2026-11-18T14:03:39.105082+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "6c0c01d2e0904b54bf1db3a8a24513d6",
+        "tool": "get_boxoffice",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 0,
+        "code": null
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 9,
+      "ts": "2026-11-18T14:03:39.105082+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "bfebf6b0754a461091a850f62f465cf6",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 10,
+      "ts": "2026-11-18T14:03:39.113911+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "24cb653b2eb4400fbfa4aa212ff7610c",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "arg_names": [
+          "movie_cd"
+        ]
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 11,
+      "ts": "2026-11-18T14:03:39.114863+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "bfebf6b0754a461091a850f62f465cf6",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 0,
+        "code": null
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 12,
+      "ts": "2026-11-18T14:03:39.123961+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "24cb653b2eb4400fbfa4aa212ff7610c",
+        "tool": "get_movie_detail",
+        "provider": "KOBIS",
+        "ok": true,
+        "duration_ms": 0,
+        "code": null
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 13,
+      "ts": "2026-11-18T14:03:39.123961+09:00",
+      "type": "tool_call",
+      "stage": "execute",
+      "payload": {
+        "call_id": "0b380c5feb1a4b4687f8aa391489398e",
+        "tool": "search_theaters",
+        "provider": "KAKAO",
+        "args": {
+          "region": "마라도"
+        }
+      },
+      "duration_ms": null
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 14,
+      "ts": "2026-11-18T14:03:39.123961+09:00",
+      "type": "tool_result",
+      "stage": "execute",
+      "payload": {
+        "call_id": "0b380c5feb1a4b4687f8aa391489398e",
+        "tool": "search_theaters",
+        "provider": "KAKAO",
+        "ok": false,
+        "duration_ms": 0,
+        "code": "NO_RESULT"
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 15,
+      "ts": "2026-11-18T14:03:39.134105+09:00",
+      "type": "stage_end",
+      "stage": "execute",
+      "payload": {
+        "candidate_count": 2,
+        "cache_hits": 0,
+        "service_cache_hits": 0,
+        "failure_count": 1
+      },
+      "duration_ms": 31
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 16,
+      "ts": "2026-11-18T14:03:39.136996+09:00",
+      "type": "stage_start",
+      "stage": "judge",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 17,
+      "ts": "2026-11-18T14:03:39.139000+09:00",
+      "type": "stage_end",
+      "stage": "judge",
+      "payload": {
+        "feasible_count": 2,
+        "excluded_count": 0,
+        "title_matches": 0,
+        "next": "respond"
+      },
+      "duration_ms": 0
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 18,
+      "ts": "2026-11-18T14:03:39.144925+09:00",
+      "type": "stage_start",
+      "stage": "respond",
+      "payload": {},
+      "duration_ms": null
+    },
+    {
+      "session_id": "45d5364704b24f78b8eb4a1867fe468a",
+      "seq": 19,
+      "ts": "2026-11-18T14:03:39.144925+09:00",
+      "type": "stage_end",
+      "stage": "respond",
+      "payload": {
+        "status": "ok",
+        "recommendation_count": 2
+      },
+      "duration_ms": 0
+    }
+  ],
+  "scenario": "S4 Tool 하나 실패",
+  "message": "토요일 3시 이후 마라도에서 영화 보고 7시 전에 끝내고 싶어",
+  "answer": "추천 영화\n- 우편함을 빌린 구름 — 러닝타임 110분(광고 포함 120분), 늦어도 17:00에 시작해야 19:00까지 끝낼 수 있습니다.\n- 새벽 세탁소의 지도 — 러닝타임 98분(광고 포함 108분), 늦어도 17:12에 시작해야 19:00까지 끝낼 수 있습니다.\n재계획 0회\n판단 기준 — 광고 10분 적용. 필요 시간 = 러닝타임 + 광고 시간. 희망 시작 시각 + 필요 시간이 제약 종료 시각 이내면 충족합니다.\n조회 근거\n- get_boxoffice — 후보 2편 (우편함을 빌린 구름, 새벽 세탁소의 지도)\n- get_movie_detail — 우편함을 빌린 구름 러닝타임 110분, 출처 합성 박스오피스 상세\n- get_movie_detail — 새벽 세탁소의 지도 러닝타임 98분, 출처 합성 박스오피스 상세\n영화관 정보: '마라도' 주변에서 영화관을 찾지 못했습니다. 지역명을 다시 알려 주시면 찾아 드릴게요.\n조회 실패\n- search_theaters — '마라도' 주변에서 영화관을 찾지 못했습니다",
+  "expected": {
+    "status": "ok",
+    "replan_count": 0,
+    "recommended_titles": [
+      "우편함을 빌린 구름",
+      "새벽 세탁소의 지도"
+    ],
+    "date": "2026-11-21",
+    "start_after": "15:00",
+    "end_by": "19:00",
+    "theater_trace": [
+      "tool_call",
+      {
+        "ok": false,
+        "code": "NO_RESULT"
+      }
+    ],
+    "theater_failure_explained": true,
+    "answer_present": true,
+    "events_match_sqlite": true,
+    "final_event_status": "ok",
+    "replan_event_count": 0
+  },
+  "actual": {
+    "status": "ok",
+    "replan_count": 0,
+    "recommended_titles": [
+      "우편함을 빌린 구름",
+      "새벽 세탁소의 지도"
+    ],
+    "date": "2026-11-21",
+    "start_after": "15:00",
+    "end_by": "19:00",
+    "theater_trace": [
+      "tool_call",
+      {
+        "ok": false,
+        "code": "NO_RESULT"
+      }
+    ],
+    "theater_failure_explained": true,
+    "answer_present": true,
+    "events_match_sqlite": true,
+    "final_event_status": "ok",
+    "replan_event_count": 0
+  },
+  "differences": {}
+}
